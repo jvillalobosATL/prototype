@@ -1,0 +1,118 @@
+﻿<body>
+    <div id="page-wrapper">
+        <!-- Header -->
+        @Html.Partial("_defaultHeader")
+
+
+        @model test_mvc_website.App_Data.CollegeProfessional
+
+        @{
+            ViewBag.Title = "Delete";
+        }
+
+        <h2>Delete</h2>
+
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>CollegeProfessional</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AreaOfStudy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AreaOfStudy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.YearsWorked)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.YearsWorked)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HowDidYouHearAboutUs)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HowDidYouHearAboutUs)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AllowFeedbackEmail)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AllowFeedbackEmail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AllowSurvey)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AllowSurvey)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AllowCall)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AllowCall)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+
+        <!--footer-->
+        @Html.Partial("_footer")
+    </div>
+
+
+</body>

@@ -1,0 +1,47 @@
+﻿<body>
+    <div id="page-wrapper">
+        <!-- Header -->
+        @Html.Partial("_defaultHeader")
+
+        @{
+            ViewBag.Title = "Contact us";
+        }
+        <!-- Main -->
+        <section id="main" class="container">
+            <header>
+                <h2>@ViewBag.Title.</h2>
+                <p>Let us know if you have any queries</p>
+            </header>
+            <div class="box">
+                @*<span class="image featured"><img src="~/images/pic01.jpg" alt="" /></span>*@
+                <h3>Visit us</h3>
+                <p>
+                    <address>
+                        on the street<br />
+                        Redmond, WA 98052-6399<br />
+                        <abbr title="Phone">P:</abbr>
+                        425.555.0100
+                    </address>
+                </p>
+                <div class="row">
+                    <div class="6u 12u(mobilep)">
+                        <h3>Email</h3>
+                        <p><strong>Support:</strong>   <a href="mailto:Support@thelaunchlink.com">Support@thelaunchlink.com</a></p>
+                    </div>
+                    <div class="6u 12u(mobilep)">
+                        <h3>Call us</h3>
+                        <p>
+                            <abbr title="Phone">P:</abbr>
+                            425.555.0100
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--footer-->
+        @Html.Partial("_footer")
+    </div>
+
+
+</body>

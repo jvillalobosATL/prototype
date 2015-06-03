@@ -1,0 +1,10 @@
+﻿<header id="header">
+    <h1>@Html.ActionLink("The Launch Link", "Index", "Home")</h1>
+    <nav id="nav">
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            @Html.Partial("_LoginPartial")
+        </ul>
+    </nav>
+</header>
