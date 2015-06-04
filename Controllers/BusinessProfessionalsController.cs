@@ -10,6 +10,7 @@ using test_mvc_website.App_Data;
 
 namespace test_mvc_website.Controllers
 {
+     [Authorize]
     public class BusinessProfessionalsController : Controller
     {
         private MyDbContext db = new MyDbContext();
@@ -37,6 +38,7 @@ namespace test_mvc_website.Controllers
         }
 
         // GET: BusinessProfessionals/Create
+         [AllowAnonymous]
         public ActionResult Create()
         {
             return View();
