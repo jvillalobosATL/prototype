@@ -4,7 +4,7 @@
         @Html.Partial("_defaultHeader")
 
 
-        @model test_mvc_website.App_Data.CollegeProfessional
+        @model test_mvc_website.App_Data.CollegeProfessionalViewModel
 
         @{
             ViewBag.Title = "Create";
@@ -13,7 +13,7 @@
 
             <header>
                 <h2>Hello stranger!</h2>
-                <p>Tell us a little more about yourself</p>
+                <p>Sign up to learn more</p>
             </header>
             <section class="box">
                 @using (Html.BeginForm())
@@ -23,60 +23,52 @@
                     <div class="form-horizontal">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
+                        <!--Email and name-->
                         <div class="row uniform 50%">
                             <div class="6u 12u(mobilep)">
-                                @*@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })*@
+
                                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Email) } })
                                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
 
                             </div>
                             <div class="6u 12u(mobilep)">
-                                @*@Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })*@
 
-                                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Description) } })
-                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-                            </div>
-                        </div>
-
-                        <div class="row uniform 50%">
-                            <div class="6u 12u(mobilep)">
-                                @*@Html.LabelFor(model => model.AreaOfStudy, htmlAttributes: new { @class = "control-label col-md-2" })*@
-
-                                @Html.EditorFor(model => model.AreaOfStudy, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.AreaOfStudy) } })
-                                @Html.ValidationMessageFor(model => model.AreaOfStudy, "", new { @class = "text-danger" })
-
-                            </div>
-
-                            <div class="6u 12u(mobilep)">
-                                <div class="select-wrapper">
-                                    @*@Html.LabelFor(model => model.YearsWorked, htmlAttributes: new { @class = "control-label col-md-2" })*@
-                                    @Html.EnumDropDownListFor(model => model.YearsWorked, Html.DisplayNameFor(x => x.YearsWorked).ToHtmlString())
-
-
-                                    @Html.ValidationMessageFor(model => model.YearsWorked, "", new { @class = "text-danger" })
-                                    </div>
-                                </div>
-                        </div>
-
-                        <div class="row uniform 50%">
-                            <div class="6u 12u(mobilep)">
-                                @*@Html.LabelFor(model => model.HowDidYouHearAboutUs, htmlAttributes: new { @class = "control-label col-md-2" })*@
-
-                                @Html.EditorFor(model => model.HowDidYouHearAboutUs, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.HowDidYouHearAboutUs) } })
-                                @Html.ValidationMessageFor(model => model.HowDidYouHearAboutUs, "", new { @class = "text-danger" })
-
-                            </div>
-
-                            <div class="6u 12u(mobilep)">
-                                @*@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
 
                                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Name) } })
                                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
 
                             </div>
+                            @*<div class="6u 12u(mobilep)">
+
+                @Html.EditorFor(model => model.HowDidYouHearAboutUs, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.HowDidYouHearAboutUs) } })
+                @Html.ValidationMessageFor(model => model.HowDidYouHearAboutUs, "", new { @class = "text-danger" })
+
+            </div>*@
+                        </div>
+                        <!--password and confirm-->
+                        <div class="row uniform 50%">
+                            <div class="6u 12u(mobilep)">
+
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Password) } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="6u 12u(mobilep)">
+
+
+                                @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.ConfirmPassword) } })
+                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+                            </div>
                         </div>
 
+                        <!--degree and college name-->
                         <div class="row uniform 50%">
+                            <div class="6u 12u(mobilep)">
+                                @Html.EditorFor(model => model.UniversityName, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.UniversityName) } })
+                                @Html.ValidationMessageFor(model => model.UniversityName, "", new { @class = "text-danger" })
+
+                            </div>
                             <div class="6u 12u(mobilep)">
                                 @*@Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })*@
                                 <div class="select-wrapper">
@@ -86,14 +78,33 @@
                                     @Html.ValidationMessageFor(model => model.UniversityInvolvement, "", new { @class = "text-danger" })
                                 </div>
                             </div>
+
+
+                        </div>
+
+                        <div class="row uniform 50%">
+                            <div class="6u 12u(mobilep)">
+                                @Html.EditorFor(model => model.DegreeMayor, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.DegreeMayor) } })
+                                @Html.ValidationMessageFor(model => model.DegreeMayor, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="6u 12u(mobilep)">
+                                <div class="select-wrapper">
+                                    @*@Html.LabelFor(model => model.YearsWorked, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                    @Html.EnumDropDownListFor(model => model.YearsWorked, Html.DisplayNameFor(x => x.YearsWorked).ToHtmlString())
+
+
+                                    @Html.ValidationMessageFor(model => model.YearsWorked, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row uniform 50%">
+
                             <div class="6u 12u(narrower)">
 
                                 @Html.CheckBoxSimple("AllowFeedbackEmail", htmlAttributes: new { @checked = "" })
                                 @Html.LabelFor(model => model.AllowFeedbackEmail, htmlAttributes: new { @class = "control-label col-md-2" })
                                 @Html.ValidationMessageFor(model => model.AllowFeedbackEmail, "", new { @class = "text-danger" })
                             </div>
-                        </div>
-                        <div class="row uniform 50%">
                             <div class="6u 12u(narrower)">
                                 @Html.CheckBoxSimple("AllowSurvey", htmlAttributes: new { @checked = "" })
                                 @Html.LabelFor(model => model.AllowSurvey, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -101,20 +112,19 @@
 
 
                             </div>
+                        </div>
+                        <div class="row uniform 50%">
+
                             <div class="6u 12u(narrower)">
                             @Html.CheckBoxSimple("AllowCall", htmlAttributes: new { @checked = "" })
                             @Html.LabelFor(model => model.AllowCall)
                             </div>
-                        </div>
-                        <div class="row uniform 50%">
                             <div class="6u 12u(mobilep)">
                                 @*@Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })*@
                                 @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.PhoneNumber) } })
                                 @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
                             </div>
                         </div>
-
-
                         <div class="row uniform">
                             <div class="6u 12u(mobilep)">
 

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using test_mvc_website.App_Data;
+using test_mvc_website.General;
 
 namespace test_mvc_website.Controllers
 {
@@ -49,12 +50,15 @@ namespace test_mvc_website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,HowDidYouHearAboutUs,Industry,CompanySize,Title,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber")] BusinessProfessional businessProfessional)
+        [AllowAnonymous]
+        public ActionResult Create([Bind(Include = "Id,Email,Password,ConfirmPassword,HowDidYouHearAboutUs,Industry,CompanySize,Title,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber")] BusinessProfessionalViewModel businessProfessional)
         {
             if (ModelState.IsValid)
             {
                 businessProfessional.Id = Guid.NewGuid();
-                db.BusinessProfessionals.Add(businessProfessional);
+                BusinessProfessional dbModel = new BusinessProfessional();
+                Reflection.CopyProperties(businessProfessional, dbModel);
+                db.BusinessProfessionals.Add(dbModel);
                 db.SaveChanges();
                 return RedirectToAction("Thanks","Home");
             }
@@ -82,7 +86,7 @@ namespace test_mvc_website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Email,HowDidYouHearAboutUs,Industry,CompanySize,Title,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber")] BusinessProfessional businessProfessional)
+        public ActionResult Edit([Bind(Include = "Id,Email,HowDidYouHearAboutUs,Industry,CompanySize,Title,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber")] BusinessProfessionalViewModel businessProfessional)
         {
             if (ModelState.IsValid)
             {

@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using test_mvc_website.App_Data;
+using test_mvc_website.General;
 
 namespace test_mvc_website.Controllers
 {
@@ -48,12 +49,16 @@ namespace test_mvc_website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Email,Description,AreaOfStudy,YearsWorked,HowDidYouHearAboutUs,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber,UniversityInvolvement")] CollegeProfessional collegeProfessional)
+        [AllowAnonymous]
+         public ActionResult Create([Bind(Include = "Id,Email,Description,AreaOfStudy,YearsWorked,DegreeMayor,UniversityName,Password,ConfirmPassword,HowDidYouHearAboutUs,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber,UniversityInvolvement")] CollegeProfessionalViewModel collegeProfessional)
         {
             if (ModelState.IsValid)
             {
                 collegeProfessional.Id = Guid.NewGuid();
-                db.CollegeProfessionals.Add(collegeProfessional);
+                CollegeProfessional dbModel = new CollegeProfessional();
+                Reflection.CopyProperties(collegeProfessional,dbModel);
+
+                db.CollegeProfessionals.Add(dbModel);
                 db.SaveChanges();
                 return RedirectToAction("Thanks", "Home");
             }
@@ -81,7 +86,7 @@ namespace test_mvc_website.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Email,Description,AreaOfStudy,YearsWorked,HowDidYouHearAboutUs,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber")] CollegeProfessional collegeProfessional)
+        public ActionResult Edit([Bind(Include = "Id,Email,Description,AreaOfStudy,YearsWorked,HowDidYouHearAboutUs,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber")] CollegeProfessionalViewModel collegeProfessional)
         {
             if (ModelState.IsValid)
             {

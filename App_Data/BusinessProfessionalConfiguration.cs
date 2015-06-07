@@ -31,16 +31,16 @@ namespace test_mvc_website.App_Data
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName("Id").IsRequired();
-            Property(x => x.Email).HasColumnName("email").IsRequired().HasMaxLength(100);
-            Property(x => x.HowDidYouHearAboutUs).HasColumnName("howDidYouHearAboutUs").IsOptional().HasMaxLength(500);
-            Property(x => x.Industry).HasColumnName("industry").IsOptional();
-            Property(x => x.CompanySize).HasColumnName("companySize").IsOptional();
-            Property(x => x.Title).HasColumnName("title").IsOptional().HasMaxLength(500);
-            Property(x => x.Name).HasColumnName("name").IsOptional().HasMaxLength(500);
-            Property(x => x.AllowFeedbackEmail).HasColumnName("allowFeedbackEmail").IsRequired();
-            Property(x => x.AllowSurvey).HasColumnName("allowSurvey").IsRequired();
-            Property(x => x.AllowCall).HasColumnName("allowCall").IsRequired();
-            Property(x => x.PhoneNumber).HasColumnName("phoneNumber").IsOptional().HasMaxLength(500);
+            Property(x => x.Email).HasColumnName("Email").IsRequired().HasMaxLength(100);
+            Property(x => x.HowDidYouHearAboutUs).HasColumnName("HowDidYouHearAboutUs").IsOptional().HasMaxLength(500);
+            Property(x => x.Industry).HasColumnName("Industry").IsOptional();
+            Property(x => x.CompanySize).HasColumnName("CompanySize").IsOptional();
+            Property(x => x.Title).HasColumnName("Title").IsOptional().HasMaxLength(500);
+            Property(x => x.Name).HasColumnName("Name").IsOptional().HasMaxLength(500);
+            Property(x => x.AllowFeedbackEmail).HasColumnName("AllowFeedbackEmail").IsRequired();
+            Property(x => x.AllowSurvey).HasColumnName("AllowSurvey").IsRequired();
+            Property(x => x.AllowCall).HasColumnName("AllowCall").IsRequired();
+            Property(x => x.PhoneNumber).HasColumnName("PhoneNumber").IsOptional().HasMaxLength(500);
         }
     }
 

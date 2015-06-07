@@ -206,12 +206,13 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="General\Enumerations.cs" />
+    <Compile Include="General\Util.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Controls.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\BusinessProfessional.cs" />
+    <Compile Include="Models\BusinessProfessionalModels.cs" />
     <Compile Include="Models\CollegeProfessional.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />

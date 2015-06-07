@@ -31,17 +31,19 @@ namespace test_mvc_website.App_Data
             HasKey(x => x.Id);
 
             Property(x => x.Id).HasColumnName("Id").IsRequired();
-            Property(x => x.Email).HasColumnName("email").IsRequired().HasMaxLength(100);
-            Property(x => x.Description).HasColumnName("description").IsOptional().HasMaxLength(500);
-            Property(x => x.AreaOfStudy).HasColumnName("areaOfStudy").IsOptional().HasMaxLength(500);
-            Property(x => x.YearsWorked).HasColumnName("yearsWorked").IsOptional();
-            Property(x => x.HowDidYouHearAboutUs).HasColumnName("howDidYouHearAboutUs").IsOptional();
-            Property(x => x.Name).HasColumnName("name").IsOptional().HasMaxLength(500);
-            Property(x => x.AllowFeedbackEmail).HasColumnName("allowFeedbackEmail").IsRequired();
-            Property(x => x.AllowSurvey).HasColumnName("allowSurvey").IsRequired();
-            Property(x => x.AllowCall).HasColumnName("allowCall").IsRequired();
-            Property(x => x.PhoneNumber).HasColumnName("phoneNumber").IsOptional().HasMaxLength(50);
-            Property(x => x.UniversityInvolvement).HasColumnName("universityInvolvement").IsOptional();
+            Property(x => x.Email).HasColumnName("Email").IsRequired().HasMaxLength(100);
+            Property(x => x.Description).HasColumnName("Description").IsOptional().HasMaxLength(500);
+            Property(x => x.AreaOfStudy).HasColumnName("AreaOfStudy").IsOptional().HasMaxLength(500);
+            Property(x => x.YearsWorked).HasColumnName("YearsWorked").IsOptional();
+            Property(x => x.HowDidYouHearAboutUs).HasColumnName("HowDidYouHearAboutUs").IsOptional();
+            Property(x => x.Name).HasColumnName("Name").IsOptional().HasMaxLength(500);
+            Property(x => x.AllowFeedbackEmail).HasColumnName("AllowFeedbackEmail").IsRequired();
+            Property(x => x.AllowSurvey).HasColumnName("AllowSurvey").IsRequired();
+            Property(x => x.AllowCall).HasColumnName("AllowCall").IsRequired();
+            Property(x => x.PhoneNumber).HasColumnName("PhoneNumber").IsOptional().HasMaxLength(50);
+            Property(x => x.UniversityInvolvement).HasColumnName("UniversityInvolvement").IsOptional();
+            Property(x => x.UniversityName).HasColumnName("UniversityName").IsOptional();
+            Property(x => x.DegreeMayor).HasColumnName("DegreeMayor").IsOptional();
         }
     }
 
