@@ -8,14 +8,55 @@ using System.Web;
 using System.Web.Mvc;
 using test_mvc_website.App_Data;
 using test_mvc_website.General;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using System.Threading.Tasks;
+using test_mvc_website.Models;
 
 namespace test_mvc_website.Controllers
 {
      [Authorize]
     public class CollegeProfessionalsController : Controller
     {
+
+        #region  security
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+        #endregion
         private MyDbContext db = new MyDbContext();
 
+
+        public ActionResult HowItWorks()
+        {
+
+            return View();
+
+        }
         // GET: CollegeProfessionals
         public ActionResult Index()
         {
@@ -50,22 +91,38 @@ namespace test_mvc_website.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-         public ActionResult Create([Bind(Include = "Id,Email,Description,AreaOfStudy,YearsWorked,DegreeMayor,UniversityName,Password,ConfirmPassword,HowDidYouHearAboutUs,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber,UniversityInvolvement")] CollegeProfessionalViewModel collegeProfessional)
+         public async Task<ActionResult> Create([Bind(Include = "Id,Email,Description,AreaOfStudy,YearsWorked,DegreeMayor,UniversityName,Password,ConfirmPassword,HowDidYouHearAboutUs,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber,UniversityInvolvement")] CollegeProfessionalViewModel collegeProfessional)
         {
             if (ModelState.IsValid)
             {
-                collegeProfessional.Id = Guid.NewGuid();
-                CollegeProfessional dbModel = new CollegeProfessional();
-                Reflection.CopyProperties(collegeProfessional,dbModel);
+                var user = new ApplicationUser { UserName = collegeProfessional.Email, Email = collegeProfessional.Email };
+                var result = await UserManager.CreateAsync(user, collegeProfessional.Password);
+                if (result.Succeeded)
+                {
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 
-                db.CollegeProfessionals.Add(dbModel);
-                db.SaveChanges();
-                return RedirectToAction("Thanks", "Home");
+                    collegeProfessional.Id = Guid.NewGuid();
+                    CollegeProfessional dbModel = new CollegeProfessional();
+                    Reflection.CopyProperties(collegeProfessional, dbModel);
+
+                    db.CollegeProfessionals.Add(dbModel);
+                    db.SaveChanges();
+                    return RedirectToAction("HowItWorks");
+                }
+                AddErrors(result);
             }
 
             return View(collegeProfessional);
         }
 
+
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+        }
         // GET: CollegeProfessionals/Edit/5
         public ActionResult Edit(Guid? id)
         {

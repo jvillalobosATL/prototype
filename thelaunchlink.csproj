@@ -330,6 +330,8 @@
     <Content Include="Views\Shared\_footer.cshtml" />
     <Content Include="Views\Shared\_defaultHeader.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
+    <Content Include="Views\BusinessProfessionals\HowItWorks.cshtml" />
+    <Content Include="Views\CollegeProfessionals\HowItWorks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />

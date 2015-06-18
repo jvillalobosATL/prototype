@@ -8,13 +8,55 @@ using System.Web;
 using System.Web.Mvc;
 using test_mvc_website.App_Data;
 using test_mvc_website.General;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using System.Threading.Tasks;
+using test_mvc_website.Models;
 
 namespace test_mvc_website.Controllers
 {
      [Authorize]
     public class BusinessProfessionalsController : Controller
     {
+
+        #region  security
+        private ApplicationSignInManager _signInManager;
+        private ApplicationUserManager _userManager;
+
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
+
+        public ApplicationUserManager UserManager
+        {
+            get
+            {
+                return _userManager ?? HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+            }
+            private set
+            {
+                _userManager = value;
+            }
+        }
+        #endregion
+
+
         private MyDbContext db = new MyDbContext();
+
+        public ActionResult HowItWorks() {
+
+            return View();
+        
+        }
 
         // GET: BusinessProfessionals
         public ActionResult Index()
@@ -51,21 +93,38 @@ namespace test_mvc_website.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [AllowAnonymous]
-        public ActionResult Create([Bind(Include = "Id,Email,Password,ConfirmPassword,HowDidYouHearAboutUs,Industry,CompanySize,Title,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber")] BusinessProfessionalViewModel businessProfessional)
+         public async Task<ActionResult> Create([Bind(Include = "Id,Email,Password,ConfirmPassword,HowDidYouHearAboutUs,Industry,CompanySize,Title,Name,AllowFeedbackEmail,AllowSurvey,AllowCall,PhoneNumber")] BusinessProfessionalViewModel businessProfessional)
         {
             if (ModelState.IsValid)
             {
-                businessProfessional.Id = Guid.NewGuid();
-                BusinessProfessional dbModel = new BusinessProfessional();
-                Reflection.CopyProperties(businessProfessional, dbModel);
-                db.BusinessProfessionals.Add(dbModel);
-                db.SaveChanges();
-                return RedirectToAction("Thanks","Home");
+
+
+                var user = new ApplicationUser { UserName = businessProfessional.Email, Email = businessProfessional.Email };
+                var result = await UserManager.CreateAsync(user, businessProfessional.Password);
+                if (result.Succeeded)
+                {
+                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    businessProfessional.Id = Guid.NewGuid();
+                    BusinessProfessional dbModel = new BusinessProfessional();
+                    Reflection.CopyProperties(businessProfessional, dbModel);
+                    
+                    db.BusinessProfessionals.Add(dbModel);
+                    db.SaveChanges();
+                    return RedirectToAction("HowItWorks");
+                }
+                AddErrors(result);
             }
 
             return View(businessProfessional);
         }
 
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+        }
         // GET: BusinessProfessionals/Edit/5
         public ActionResult Edit(Guid? id)
         {
