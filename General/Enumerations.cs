@@ -15,50 +15,40 @@ namespace test_mvc_website.General
         }
         public enum eIndustry
         {
-            biotech,
-            pharmaceutical,
-            [Display(Name="health care")]
-            health_care,
-            energy,
-            utilities,
-            telecom,
             banking,
+            biotech,
+            energy,
             [Display(Name = "financial services")]
             financial_services,
-            insurance,
-            manufacturing,
-             [Display(Name = "public service")]
-            public_service,
-             [Display(Name = "travel and transportation")]
-            travel_and_transportation,
-             [Display(Name = "gaming and hospitality")]
+            [Display(Name = "gaming and hospitality")]
             gaming_and_hospitality,
-            retail,
+            [Display(Name = "health care")]
+            health_care,
+            insurance,
             internet,
-             [Display(Name = "non profit")]
-            non_profit
+            manufacturing,
+            [Display(Name = "non profit")]
+            non_profit,
+            pharmaceutical,
+            [Display(Name = "public service")]
+            public_service,
+            retail,
+            telecom,
+            [Display(Name = "travel and transportation")]
+            travel_and_transportation,
+            utilities
         }
         public enum eCompanySize 
         {
 
-            [Display(Name = "1-9")]
-            _1_9,
-             [Display(Name = "10-24")]
-            _10_24,
-             [Display(Name = "25-99")]
-            _25_99,
-             [Display(Name = "100-499")]
-            _100_499,
-             [Display(Name = "500-999")]
-            _500_999,
-             [Display(Name = "1000-1999")]
-            _1000_1999,
-             [Display(Name = "2000-4999")]
-            _2000_4999,
-             [Display(Name = "5000-9999")]
-            _5000_9999,
-             [Display(Name = "10000 or more")]
-            _10000_or_more
+            [Display(Name = "Less than $1M Revenue")]
+            _less1m,
+             [Display(Name = "$1M - $10M Revenue")]
+            _1to10,
+             [Display(Name = "$10M - $100M Revenue")]
+            _10to100,
+             [Display(Name = "$100M - $1B Revenue")]
+            _100to1b
         }
 
         public enum eEducationLevel  {

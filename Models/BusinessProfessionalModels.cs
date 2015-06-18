@@ -1,11 +1,3 @@
-// ReSharper disable RedundantUsingDirective
-// ReSharper disable DoNotCallOverridableMethodsInConstructor
-// ReSharper disable InconsistentNaming
-// ReSharper disable PartialTypeWithSinglePart
-// ReSharper disable PartialMethodWithSinglePart
-// ReSharper disable RedundantNameQualifier
-// TargetFrameworkVersion = 4.51
-#pragma warning disable 1591    //  Ignore "Missing XML Comment" warning
 
 using System;
 using System.CodeDom.Compiler;
@@ -18,7 +10,6 @@ using System.Data.SqlClient;
 using System.Data.Entity.ModelConfiguration;
 using System.Threading;
 using System.Threading.Tasks;
-using DatabaseGeneratedOption = System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption;
 using System.ComponentModel.DataAnnotations;
 using test_mvc_website.General;
 namespace test_mvc_website.App_Data
@@ -29,30 +20,17 @@ namespace test_mvc_website.App_Data
     public class BusinessProfessional
     {
         public Guid Id { get; set; } // Id (Primary key)
-
-        [Required]
         public string Name { get; set; } // name
-        [Required]
-        [EmailAddress(ErrorMessage = "invalid email")]
         public string Email { get; set; } // email
 
-        [Display(Name = "How did you hear about us")]
         public string HowDidYouHearAboutUs { get; set; } // howDidYouHearAboutUs
+
         public eIndustry? Industry { get; set; } // industry
-
-        [Display(Name = "Title (e.g. VP Operations)")]
         public string Title { get; set; } // title
-        [Display(Name = "Company Size")]
         public eCompanySize? CompanySize { get; set; } // companySize
-
-        [Display(Name = "Can we email you for additional feedback?")]
         public bool AllowFeedbackEmail { get; set; } // allowFeedbackEmail
-        [Display(Name = "Do you mind taking a quick survey?")]
         public bool AllowSurvey { get; set; } // allowSurvey
-        [Display(Name = "Can we call you to discuss our solution in more detail?")]
         public bool AllowCall { get; set; } // allowCall
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "invalid number")]
-        [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; } // phoneNumber
     }
 
@@ -61,13 +39,13 @@ namespace test_mvc_website.App_Data
     {
         public Guid Id { get; set; } // Id (Primary key)
 
-        [Required]
+        [Required(ErrorMessage="name required")]
         public string Name { get; set; } // name
-        [Required]
+        [Required(ErrorMessage = "email required")]
         [EmailAddress(ErrorMessage="invalid email")]
         public string Email { get; set; } // email
 
-        [Required]
+        [Required(ErrorMessage = "password required")]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
@@ -79,10 +57,13 @@ namespace test_mvc_website.App_Data
 
         [Display(Name="How did you hear about us")]
         public string HowDidYouHearAboutUs { get; set; } // howDidYouHearAboutUs
+        [Required(ErrorMessage = "Industry required")]
         public eIndustry? Industry { get; set; } // industry
 
+        [Required(ErrorMessage = "title required")]
         [Display(Name = "Title (e.g. VP Operations)")]
         public string Title { get; set; } // title
+        [Required(ErrorMessage = "Company Size required")]
         [Display(Name = "Company Size")]
         public eCompanySize? CompanySize { get; set; } // companySize
         
@@ -92,6 +73,7 @@ namespace test_mvc_website.App_Data
         public bool AllowSurvey { get; set; } // allowSurvey
         [Display(Name = "Can we call you to discuss our solution in more detail?")]
         public bool AllowCall { get; set; } // allowCall
+        
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "invalid number")]
         [Display(Name = "Phone Number")]
         public string PhoneNumber { get; set; } // phoneNumber
