@@ -8,6 +8,14 @@ namespace test_mvc_website.Controllers
 {
     public class HomeController : Controller
     {
+
+       [Authorize]
+        public ActionResult HowItWorks()
+        {
+
+            return View();
+
+        }
         public ActionResult Index()
         {
             return View();

@@ -110,7 +110,7 @@ namespace test_mvc_website.Controllers
                     
                     db.BusinessProfessionals.Add(dbModel);
                     db.SaveChanges();
-                    return RedirectToAction("HowItWorks");
+                    return RedirectToAction("HowItWorks","Home");
                 }
                 AddErrors(result);
             }

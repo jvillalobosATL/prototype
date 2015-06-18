@@ -4,7 +4,9 @@
 {
     <li> @User.Identity.GetUserName() </li>
 }
-<li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+<li>@Html.ActionLink("How it Works", "HowItWorks", "Home")</li>
+@*<li>@Html.ActionLink("Home", "Index", "Home")</li>*@
 <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 @if (Request.IsAuthenticated)
 {

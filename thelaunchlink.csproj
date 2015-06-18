@@ -332,6 +332,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Enum.cshtml" />
     <Content Include="Views\BusinessProfessionals\HowItWorks.cshtml" />
     <Content Include="Views\CollegeProfessionals\HowItWorks.cshtml" />
+    <Content Include="Views\Home\HowItWorks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Business\" />
