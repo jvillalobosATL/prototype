@@ -4,7 +4,7 @@
 
 
     .sharing-buttons {
-        font-size:1.2em;
+        font-size:0.8em;
         list-style: none;
         text-decoration: none;
         text-align: right;
@@ -17,7 +17,7 @@
         .sharing-buttons  a {
             border: 1px solid;
             padding: 0.2em 0.5em;
-        
+        text-align:center;
             color: #fff;
             text-decoration: none;
         }
@@ -40,12 +40,26 @@
         background: #3B5998;
     }
 
-    .twitter {
-        background: #00ACED;
-    }
+    .twitter.icon {
+          background: #00ACED;
+          height:4em;
+          line-height:4em;
+          width:4em;
 
-    .google-plus {
-        background: #D14836;
+    }
+        .google-plus.icon {
+          background: #D14836;
+          height:4em;
+          line-height:4em;
+          width:4em;
+
+    }
+                .facebook.icon {
+          background: #3B5998;
+          height:4em;
+          line-height:4em;
+          width:4em;
+
     }
 </style>
 <body>
@@ -68,9 +82,30 @@
 
 
                     <section class="box special">
+  
 
-                        <!--socialmedia-->
                         <div>
+                            <ul class="sharing-buttons ">
+                                <li>
+                                    <a class="icon major fa-facebook facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+                                  
+                                    </a>
+
+                                    <a class="icon major fa-twitter twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.thelaunchlink.com&text=Check%20this%20site" target="_blank">
+
+                                    
+                                    </a>
+
+                                    <a class="icon major fa-google-plus google-plus" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!--socialmedia-->
+                        @*<div>
                             <ul class="sharing-buttons ">
                                 <li>
                                     <a class="facebook icon fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
@@ -90,7 +125,7 @@
                                 </li>
                             </ul>
                           
-                        </div>
+                        </div>*@
 
 
 
@@ -154,19 +189,18 @@
                                     <div>
                                         <ul class="sharing-buttons ">
                                             <li>
-                                                <a class="facebook icon fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+                                                <a class="icon major fa-facebook facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
 
-                                                    Facebook
+
                                                 </a>
 
-                                                <a class="twitter icon fa-twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.thelaunchlink.com&text=Check%20this%20site" target="_blank">
+                                                <a class="icon major fa-twitter twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.thelaunchlink.com&text=Check%20this%20site" target="_blank">
 
-                                                    Tweet
+
                                                 </a>
 
-                                                <a class="google-plus icon fa-google-plus" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+                                                <a class="icon major fa-google-plus google-plus" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
 
-                                                    Google+
                                                 </a>
                                             </li>
                                         </ul>
