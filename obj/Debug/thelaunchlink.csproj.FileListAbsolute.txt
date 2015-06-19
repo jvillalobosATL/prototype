@@ -162,4 +162,3 @@ C:\Users\Jorge\Documents\Visual Studio 2013\Projects\thelaunchlink\thelaunchlink
 C:\Users\Jorge\Documents\Visual Studio 2013\Projects\thelaunchlink\thelaunchlink\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Jorge\Documents\Visual Studio 2013\Projects\thelaunchlink\thelaunchlink\obj\Debug\test-mvc-website.dll
 C:\Users\Jorge\Documents\Visual Studio 2013\Projects\thelaunchlink\thelaunchlink\obj\Debug\test-mvc-website.pdb
-C:\Users\Jorge\Documents\Visual Studio 2013\Projects\thelaunchlink\thelaunchlink\obj\Debug\thelaunchlink.csprojResolveAssemblyReference.cache
