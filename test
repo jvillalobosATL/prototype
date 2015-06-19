@@ -1,0 +1,60 @@
+[1mdiff --git a/assets/css/main.css b/assets/css/main.css[m
+[1mindex 5bf55c4..c11b68c 100644[m
+[1m--- a/assets/css/main.css[m
+[1m+++ b/assets/css/main.css[m
+[36m@@ -3240,7 +3240,7 @@[m
+ 		/* Basic */[m
+ [m
+ 			body, input, select, textarea {[m
+[31m-				font-size: 13pt;[m
+[32m+[m				[32mfont-size: 20pt;[m
+ 			}[m
+ [m
+ 		/* Banner */[m
+[36m@@ -3258,7 +3258,7 @@[m
+ 		/* Basic */[m
+ [m
+ 			body, input, select, textarea {[m
+[31m-				font-size: 11pt;[m
+[32m+[m				[32mfont-size: 13pt;[m
+ 			}[m
+ [m
+ 		/* Header */[m
+[36m@@ -3286,7 +3286,7 @@[m
+ 		/* Basic */[m
+ [m
+ 			body, input, select, textarea {[m
+[31m-				font-size: 11pt;[m
+[32m+[m				[32mfont-size: 13pt;[m
+ 			}[m
+ [m
+ 	}[m
+[36m@@ -3306,7 +3306,7 @@[m
+ 			}[m
+ [m
+ 			body, input, select, textarea {[m
+[31m-				font-size: 11pt;[m
+[32m+[m				[32mfont-size: 13pt;[m
+ 			}[m
+ [m
+ 			h2 br, h3 br, h4 br, h5 br, h6 br {[m
+[36m@@ -3527,7 +3527,7 @@[m
+ 		/* Basic */[m
+ [m
+ 			body, input, select, textarea {[m
+[31m-				font-size: 11pt;[m
+[32m+[m				[32mfont-size: 13pt;[m
+ 			}[m
+ [m
+ 			h2 {[m
+[36m@@ -3663,7 +3663,7 @@[m
+ 			}[m
+ [m
+ 			body, input, select, textarea {[m
+[31m-				font-size: 11pt;[m
+[32m+[m				[32mfont-size: 13pt;[m
+ 			}[m
+ [m
+ 		/* Section/Article */[m
+warning: LF will be replaced by CRLF in assets/css/main.css.
+The file will have its original line endings in your working directory.
