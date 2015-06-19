@@ -1,4 +1,4 @@
-﻿<body>
+﻿<body class="landing">
     <div id="page-wrapper">
         <!-- Header -->
         @Html.Partial("_defaultHeader")
@@ -7,12 +7,15 @@
         @{
             ViewBag.Title = "Create";
         }
+
+        <!--Banner-->
+        <section id="banner">
+                <h2>Hello stranger!</h2>
+            <p>Sign up to lean more</p>
+        </section>
+        <!--Main-->
         <section id="main" class="container">
 
-            <header>
-                <h2>Hello stranger!</h2>
-                <p>Sign up to lean more</p>
-            </header>
             <section class="box">
                 @using (Html.BeginForm())
                 {
@@ -35,42 +38,42 @@
                         </div>
                         @*<div class="6u 12u(mobilep)">
 
-                            @Html.EditorFor(model => model.HowDidYouHearAboutUs, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.HowDidYouHearAboutUs) } })
-                            @Html.ValidationMessageFor(model => model.HowDidYouHearAboutUs, "", new { @class = "text-danger" })
+                                @Html.EditorFor(model => model.HowDidYouHearAboutUs, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.HowDidYouHearAboutUs) } })
+                                @Html.ValidationMessageFor(model => model.HowDidYouHearAboutUs, "", new { @class = "text-danger" })
 
-                        </div>*@
+                            </div>*@
                     </div>
                     <div class="row uniform 50%">
-        <div class="6u 12u(mobilep)">
+                        <div class="6u 12u(mobilep)">
 
-            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Password) } })
-            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Password) } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
 
-        </div>
-        <div class="6u 12u(mobilep)">
+                        </div>
+                        <div class="6u 12u(mobilep)">
 
 
-            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.ConfirmPassword) } })
-            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.ConfirmPassword) } })
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
 
-        </div>
-    </div>
-                <div class="row uniform 50%">
-                    <div class="6u 12u(mobilep)">
-                        <div class="select-wrapper">
-                            @Html.EnumDropDownListFor(model => model.Industry, Html.DisplayNameFor(x => x.Industry).ToHtmlString())
-                            @Html.ValidationMessageFor(model => model.Industry, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row uniform 50%">
+                        <div class="6u 12u(mobilep)">
+                            <div class="select-wrapper">
+                                @Html.EnumDropDownListFor(model => model.Industry, Html.DisplayNameFor(x => x.Industry).ToHtmlString())
+                                @Html.ValidationMessageFor(model => model.Industry, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
-                    <div class="6u 12u(mobilep)">
-                        <div class="select-wrapper">
+                        <div class="6u 12u(mobilep)">
+                            <div class="select-wrapper">
 
-                            @*@Html.EditorFor(model => model.CompanySize, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.CompanySize) } })*@
-                            @Html.EnumDropDownListFor(model => model.CompanySize, Html.DisplayNameFor(x => x.CompanySize).ToHtmlString())
-                            @Html.ValidationMessageFor(model => model.CompanySize, "", new { @class = "text-danger" })
+                                @*@Html.EditorFor(model => model.CompanySize, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.CompanySize) } })*@
+                                @Html.EnumDropDownListFor(model => model.CompanySize, Html.DisplayNameFor(x => x.CompanySize).ToHtmlString())
+                                @Html.ValidationMessageFor(model => model.CompanySize, "", new { @class = "text-danger" })
+                            </div>
                         </div>
-                    </div>
                     </div>
 
                     <div class="row uniform 50%">
@@ -136,8 +139,8 @@
                         </div>
                     </div>
 
-                    }
-</section>
+                }
+            </section>
         </section>
         @*<div>
                 @Html.ActionLink("Back to List", "Index")

@@ -1,4 +1,4 @@
-﻿<body>
+﻿<body class="landing">
     <div id="page-wrapper">
         <!-- Header -->
         @Html.Partial("_defaultHeader")
@@ -9,12 +9,20 @@
         @{
             ViewBag.Title = "Create";
         }
+
+        <!--Banner-->
+        <section id="banner">
+            <h2>Hello stranger!</h2>
+            <p>Sign up to lean more</p>
+        </section>
+
+        <!--Main-->
         <section id="main" class="container">
 
-            <header>
+            @*<header>
                 <h2>Hello stranger!</h2>
                 <p>Sign up to learn more</p>
-            </header>
+            </header>*@
             <section class="box">
                 @using (Html.BeginForm())
                 {
@@ -40,10 +48,10 @@
                             </div>
                             @*<div class="6u 12u(mobilep)">
 
-                @Html.EditorFor(model => model.HowDidYouHearAboutUs, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.HowDidYouHearAboutUs) } })
-                @Html.ValidationMessageFor(model => model.HowDidYouHearAboutUs, "", new { @class = "text-danger" })
+                                    @Html.EditorFor(model => model.HowDidYouHearAboutUs, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.HowDidYouHearAboutUs) } })
+                                    @Html.ValidationMessageFor(model => model.HowDidYouHearAboutUs, "", new { @class = "text-danger" })
 
-            </div>*@
+                                </div>*@
                         </div>
                         <!--password and confirm-->
                         <div class="row uniform 50%">
@@ -116,8 +124,8 @@
                         <div class="row uniform 50%">
 
                             <div class="6u 12u(narrower)">
-                            @Html.CheckBoxSimple("AllowCall", htmlAttributes: new { @checked = "" })
-                            @Html.LabelFor(model => model.AllowCall)
+                                @Html.CheckBoxSimple("AllowCall", htmlAttributes: new { @checked = "" })
+                                @Html.LabelFor(model => model.AllowCall)
                             </div>
                             <div class="6u 12u(mobilep)">
                                 @*@Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })*@
@@ -139,8 +147,8 @@
             </section>
         </section>
         @*<div>
-            @Html.ActionLink("Back to List", "Index")
-        </div>*@
+                @Html.ActionLink("Back to List", "Index")
+            </div>*@
 
         @section Scripts {
             @Scripts.Render("~/bundles/jqueryval")
