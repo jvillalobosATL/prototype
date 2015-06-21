@@ -3037,6 +3037,14 @@
 		color: #fff;
 		padding: 12em 0 20em 0;
 		text-align: center;
+       
+         /*background: -webkit-linear-gradient(#36465d, #131734); 
+        
+         background: -o-linear-gradient(#36465d, #131734); 
+       
+         background: -moz-linear-gradient(#36465d, #131734); 
+      
+         background: linear-gradient(#36465d, #131734);*/
 	}
 
 		#banner :last-child {
