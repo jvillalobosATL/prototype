@@ -2,9 +2,18 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using System;
 
 namespace test_mvc_website.Models
 {
+
+    public class UserMapping
+    {
+        public Guid UserId { get; set; }
+        public string Type { get; set; }
+        public Guid EntityId { get; set; }
+    
+    }
     public class IndexViewModel
     {
         public bool HasPassword { get; set; }

@@ -226,9 +226,21 @@
                                         </ul>
 
                                     </div>
+                                
+
                                     <h3>Your feedback is much appreciated!</h3>
-                                    <a href="https://www.surveymonkey.com/s/LFGH6MB" target="_blank">help us with this survey</a>
-                                </section>
+                                    @if (ViewBag.UserType == "talent")
+                                    {
+
+                                        <a href="https://www.surveymonkey.com/s/GVLMCPQ" target="_blank">help us with this survey to help talented people</a>
+                                    }
+                                    else if (ViewBag.UserType == "business")
+                                    {
+
+                                        <a href="https://www.surveymonkey.com/s/LFGH6MB" target="_blank">help us with this survey to help your business</a>
+                                    }
+                             
+     </section>
                             </div>
 </section>
         </section>

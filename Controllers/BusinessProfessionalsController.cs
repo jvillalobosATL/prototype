@@ -109,6 +109,7 @@ namespace test_mvc_website.Controllers
                     Reflection.CopyProperties(businessProfessional, dbModel);
                     
                     db.BusinessProfessionals.Add(dbModel);
+                    db.UserMappings.Add(new UserMapping { UserId = Guid.Parse(user.Id), Type = "business",EntityId=businessProfessional.Id });
                     db.SaveChanges();
                     return RedirectToAction("HowItWorks","Home");
                 }

@@ -106,8 +106,9 @@ namespace test_mvc_website.Controllers
                     Reflection.CopyProperties(collegeProfessional, dbModel);
 
                     db.CollegeProfessionals.Add(dbModel);
+                    db.UserMappings.Add(new UserMapping { UserId = Guid.Parse(user.Id), Type = "talent", EntityId = collegeProfessional.Id });
                     db.SaveChanges();
-                    return RedirectToAction("HowItWorks", "Home");
+                    return RedirectToAction("HowItWorks", "Home", new{type="talent" });
                 }
                 AddErrors(result);
             }
