@@ -214,6 +214,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfessionalModels.cs" />
     <Compile Include="Models\CollegeProfessional.cs" />
+    <Compile Include="Models\ContactUs.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\ModelsConfiguration.cs" />

@@ -48,9 +48,46 @@ namespace test_mvc_website.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            //if (User!=null)
+            //    if (User.Identity!=null)
+            //    {
+            //        AspNetUser user = db.AspNetUsers.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
+
+            //        if (user != null)
+            //        {
+            //            return View(new ContactUs {Email = user.Email,})
+            //        }
+            //    }
 
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [AllowAnonymous]
+        public ActionResult Contact([Bind(Include = "Id,Email,Name,Message")] ContactUs contactUs)
+        {
+            if (ModelState.IsValid)
+            {
+
+                //if (User!=null)
+                //    if (User.Identity != null)
+                //    {
+                //        AspNetUser user = db.AspNetUsers.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
+
+                //        if (user != null)
+                //        {
+                //            contactUs.User
+                //        }
+                //    }
+                    contactUs.Id = Guid.NewGuid();
+                    db.ContactUs.Add(contactUs);
+                    db.SaveChanges();
+                    return RedirectToAction("HowItWorks", "Home");
+              
+            }
+
+            return View(contactUs);
         }
 
         public ActionResult Thanks()

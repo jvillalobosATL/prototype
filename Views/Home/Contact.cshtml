@@ -3,41 +3,87 @@
         <!-- Header -->
         @Html.Partial("_defaultHeader")
 
+
+        @model test_mvc_website.App_Data.ContactUs
+
         @{
             ViewBag.Title = "Contact us";
         }
-        <!-- Main -->
+
+
+        <!--Main-->
         <section id="main" class="container">
-            <header>
-                <h2>@ViewBag.Title.</h2>
-                <p>Let us know if you have any queries</p>
-            </header>
-            <div class="box">
-                @*<span class="image featured"><img src="~/images/pic01.jpg" alt="" /></span>*@
-                <h3>Visit us</h3>
-                <p>
-                    <address>
-                        on the street<br />
-                        Redmond, WA 98052-6399<br />
-                        <abbr title="Phone">P:</abbr>
-                        425.555.0100
-                    </address>
-                </p>
-                <div class="row">
-                    <div class="6u 12u(mobilep)">
-                        <h3>Email</h3>
-                        <p><strong>Support:</strong>   <a href="mailto:Support@thelaunchlink.com">Support@thelaunchlink.com</a></p>
-                    </div>
-                    <div class="6u 12u(mobilep)">
-                        <h3>Call us</h3>
-                        <p>
-                            <abbr title="Phone">P:</abbr>
-                            425.555.0100
-                        </p>
-                    </div>
+
+            @*<header>
+
+            </header>*@
+
+            <section class="box">
+
+                <div style="float:left;">
+                    <h2>Contact us</h2>
+                    @*<p>We are happy to anwer any questions you have.</p>*@
                 </div>
-            </div>
+                    <div style="float:right">
+                    <div > EMAIL</div>
+                    <a href="mailto:support@thelaunchlink.com">support@thelaunchlink.com</a>
+                </div>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <!--Email and name-->
+                        <div class="row uniform 50%">
+                            <div class="6u 12u(mobilep)">
+
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Email) } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                            </div>
+                            <div class="6u 12u(mobilep)">
+
+
+                                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Name) } })
+                                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+                        <!--password and confirm-->
+                        <div class="row uniform">
+                            <div class="12u">
+
+                                @Html.TextAreaFor(model => model.Message, new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Message), rows = 5 })
+                                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+
+                            </div>
+                        </div>
+
+                        <!--degree and college name-->
+                        <div class="row uniform">
+                            <div class="12u">
+
+                                <input type="submit" value="Submit" class="button special" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            </section>
         </section>
+        @*<div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>*@
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }
+
 
         <!--footer-->
         @Html.Partial("_footer")

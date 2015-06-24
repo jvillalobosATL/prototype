@@ -32,6 +32,7 @@ namespace test_mvc_website.App_Data
         public IDbSet<BusinessProfessional> BusinessProfessionals { get; set; } // businessProfessionals
         public IDbSet<CollegeProfessional> CollegeProfessionals { get; set; } // collegeProfessionals
         public IDbSet<UserMapping> UserMappings { get; set; }
+        public IDbSet<ContactUs> ContactUs { get; set; }
         
         static MyDbContext()
         {
@@ -67,6 +68,7 @@ namespace test_mvc_website.App_Data
             modelBuilder.Configurations.Add(new BusinessProfessionalConfiguration());
             modelBuilder.Configurations.Add(new CollegeProfessionalConfiguration());
             modelBuilder.Configurations.Add(new UserMappingsConfiguration());
+            modelBuilder.Configurations.Add(new ContactUsConfiguration());
         }
 
         public static DbModelBuilder CreateModel(DbModelBuilder modelBuilder, string schema)
@@ -78,6 +80,7 @@ namespace test_mvc_website.App_Data
             modelBuilder.Configurations.Add(new BusinessProfessionalConfiguration(schema));
             modelBuilder.Configurations.Add(new CollegeProfessionalConfiguration(schema));
             modelBuilder.Configurations.Add(new UserMappingsConfiguration(schema));
+            modelBuilder.Configurations.Add(new ContactUsConfiguration(schema));
             return modelBuilder;
         }
         
