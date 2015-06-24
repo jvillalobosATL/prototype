@@ -40,20 +40,21 @@
                         <div class="row uniform 50%">
                             <div class="6u 12u(mobilep)">
 
-                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Email) } })
-                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-
-                            </div>
-                            <div class="6u 12u(mobilep)">
-
 
                                 @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Name) } })
                                 @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
 
                             </div>
+                            <div class="6u 12u(mobilep)">
+
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Email) } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                            </div>
+
                         </div>
                         <!--password and confirm-->
-                        <div class="row uniform">
+                        <div class="row uniform 50%">
                             <div class="12u">
 
                                 @Html.TextAreaFor(model => model.Message, new { @class = "form-control", placeholder = Html.DisplayNameFor(x => x.Message), rows = 5 })
@@ -63,7 +64,7 @@
                         </div>
 
                         <!--degree and college name-->
-                        <div class="row uniform">
+                        <div class="row uniform 50%">
                             <div class="12u">
 
                                 <input type="submit" value="Submit" class="button special" />
