@@ -241,6 +241,17 @@
 
 	}
 
+
+        .no-close .ui-dialog-titlebar-close {
+        display: none !important;
+    }
+@media screen and (max-width: 480px) {
+
+
+    .ui-dialog {
+        width: 100% !important;
+    }
+}
 /* Grid */
 
 	.row {
