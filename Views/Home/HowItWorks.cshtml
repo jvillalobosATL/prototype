@@ -142,7 +142,7 @@
                         </div>*@
                         <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
                         <style>
-
+                            .no-close .ui-dialog-titlebar-close {display: none !important}
                             .myClass {
 
                             }
@@ -161,7 +161,6 @@
                                 $("#modal1").dialog({
                                     resizable: false,
                                     autoOpen: false,
-                                    height: 250,
                                     width: 440,
                                     modal: false,
                                     buttons: {
@@ -169,14 +168,14 @@
                                             $(this).dialog("close");
                                         }
                                     }
-                                    , title:"Launch a Project"
+                                    , title: "Launch a Project"
+                                    ,dialogClass: "no-close"
 
                                 });
 
                                 $("#modal2").dialog({
                                     resizable: false,
                                     autoOpen: false,
-                                    height: 300,
                                     width: 440,
                                     modal: false,
                                     buttons: {
@@ -184,13 +183,13 @@
                                             $(this).dialog("close");
                                         }
                                     },
-                                    title:"Launch a Competition"
+                                    title: "Launch a Competition"
+                                     , dialogClass: "no-close"
                                 });
 
                                 $("#modal3").dialog({
                                     resizable: false,
                                     autoOpen: false,
-                                    height: 500,
                                     width: 440,
                                     modal: false,
                                     buttons: {
@@ -199,12 +198,12 @@
                                         }
                                     },
                                     title: "Service Fee"
+                                     , dialogClass: "no-close"
                                 });
 
                                 $("#modal4").dialog({
                                     resizable: false,
                                     autoOpen: false,
-                                    height: 400,
                                     width: 440,
                                     modal: false,
                                     buttons: {
@@ -213,11 +212,11 @@
                                         }
                                     },
                                     title: "Cockpit"
+                                     , dialogClass: "no-close"
                                 });
                                 $("#modal5").dialog({
                                     resizable: false,
                                     autoOpen: false,
-                                    height: 500,
                                     width: 440,
                                     modal: false,
                                     buttons: {
@@ -226,11 +225,11 @@
                                         }
                                     },
                                     title: "Work Environment"
+                                     , dialogClass: "no-close"
                                 });
                                 $("#modal6").dialog({
                                     resizable: false,
                                     autoOpen: false,
-                                    height: 500,
                                     width: 440,
                                     modal: false,
                                     buttons: {
@@ -239,6 +238,7 @@
                                         }
                                     },
                                     title: "Secure Working Area"
+                                     , dialogClass: "no-close"
                                 });
 
 
