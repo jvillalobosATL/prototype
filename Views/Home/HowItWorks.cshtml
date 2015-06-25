@@ -140,11 +140,137 @@
                             </ul>
                           
                         </div>*@
+                        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+                        <style>
+
+                            .myClass {
+
+                            }
+                                .myClass div {
+                                    font-size: 1.5em;
+                                    color: #646464;
+                                    border: none;
+                                    background-color: none;
+                                }
+
+                        </style>
+                        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+                        <script>
+                            $(document).ready(function () {
+
+                                $("#modal1").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    height: 250,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    }
+                                    , title:"Launch a Project"
+
+                                });
+
+                                $("#modal2").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    height: 300,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title:"Launch a Competition"
+                                });
+
+                                $("#modal3").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    height: 500,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title: "Service Fee"
+                                });
+
+                                $("#modal4").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    height: 400,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title: "Cockpit"
+                                });
+                                $("#modal5").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    height: 500,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title: "Work Environment"
+                                });
+                                $("#modal6").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    height: 500,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title: "Secure Working Area"
+                                });
 
 
+                                $("#lnk1").click(function () {
+                                    $("#modal1").dialog("open");
+                                });
+                                $("#lnk2").click(function () { $("#modal2").dialog("open"); });
+                                $("#lnk3").click(function () { $("#modal3").dialog("open"); });
+                                $("#lnk4").click(function () { $("#modal4").dialog("open"); });
+                                $("#lnk5").click(function () { $("#modal5").dialog("open"); });
+                                $("#lnk6").click(function () { $("#modal6").dialog("open"); });
+                            });
+                        </script>
+                        <div id="modal1">Consists of multiple bids and you will select the best bid and collaborate with that person to complete the project</div>
+                        <div id="modal2">Consist of multiple people participating in the competition (many individual projects) and the business will award a prize to the top few performers.</div>
+                        <div id="modal3">Here’s an example of how the service fee works:
+                            <ul>
+                                <li>Business selects best bid of $10,000</li>
+                                <li>  The launch link takes payment of $11,500</li>
+                                <li>Once the project is complete the launch link sends payment of 9,500 to consultant</li>
+                                <li>The launch Link’s fee to business is 15%</li>
+                                <li>The launch links fee to consultant is 5%</li>
+                            </ul>
+                        </div>
+                        <div id="modal4">Project plan – One of our PM professionals will work with you to develop a detailed project plan, milestones, checkpoints and success criteria. Additionally, we’ll take care of all of the legal stuff like NDA’s and confidentiality agreements</div>
+                      
 
+                        <div id="modal5">Once the project is started the work environment is where you will collaborate with the consultant </div>
 
-                            <div class="12u">
+                        <div id="modal6">This is where the work takes place. It’s a secure environment where data is maintained and analysis is completed. </div>
+
+                              <div class="12u">
                                 <section>
                                     <p>
                                         <span class="image left">
@@ -153,12 +279,8 @@
                                         <h3 class="align-left">1. Post a Project – Tell us your goals</h3>
 
                                     <p class="align-left">
-                                        Tell us a little bit about your project goals, tools and required experience and then determine if you would like to launch a project or launch a competition!
+                                        Tell us a little bit about your project goals, tools and required experience and then determine if you would like to <a id="lnk1">launch a project</a>  or <a id="lnk2">launch a competition!</a>
                                     </p>
-
-
-
-
                                     <p>
                                         <span class="image left">
                                             <span class="icon major fa-search accent1"></span>
@@ -173,7 +295,7 @@
                                         <span class="image left">
                                             <span class="icon major fa-area-chart accent3"></span>
                                         </span>
-                                        <h3 class="align-left">3. Project Cockpit – Project management control center</h3>
+                                        <h3 class="align-left">3. Project <a id="lnk4">Cockpit</a> – Project management control center</h3>
                                     <p class="align-left">
                                         Our proprietary work environment that  provides you all of the tools needed for a speedy launch and successful completion of the project.
                                         Our pre project package takes care of the legal stuff like NDA’s and SOW’s while our work environment allows you to collaborate, set milestones and checkpoints and share findings.
@@ -185,7 +307,7 @@
                                         </span>
                                         <h3 class="align-left">4. Project Completion – Pay when you’re satisfied </h3>
                                     <p class="align-left">
-                                        The launch link handles all payments and will pay the consultants once the work is completed less our service fee. At time of project launch ,once the business selects the bid, we’ll take payment via credit card or ach and hold it in escrow until the project is complete
+                                        The launch link handles all payments and will pay the consultants once the work is completed less our <a id="lnk3">service fee</a> At time of project launch ,once the business selects the bid, we’ll take payment via credit card or ach and hold it in escrow until the project is complete
                                     </p>
 
 
@@ -226,10 +348,10 @@
                                         </ul>
 
                                     </div>
-                                
 
 
-                             
+
+
      </section>
                             </div>
 </section>
