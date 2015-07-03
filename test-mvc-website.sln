@@ -1,0 +1,72 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "px-momentum", "http://localhost:54049", "{3DA37493-1A8A-4B53-AE53-5B9FD8623138}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54049"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Downloads\px-momentum\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54049\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54049"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Downloads\px-momentum\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54049\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\Downloads\px-momentum\"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "px-alpha", "http://localhost:54082", "{C75424ED-9E55-4297-B058-DA5CBFAAACD6}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54082"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\Downloads\px-alpha\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54082\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54082"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\Downloads\px-alpha\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54082\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\..\..\Downloads\px-alpha\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "thelaunchlink", "prototype\thelaunchlink.csproj", "{5FD5D8BE-E839-407B-9401-656E9CDD275C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DA37493-1A8A-4B53-AE53-5B9FD8623138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA37493-1A8A-4B53-AE53-5B9FD8623138}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA37493-1A8A-4B53-AE53-5B9FD8623138}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA37493-1A8A-4B53-AE53-5B9FD8623138}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{C75424ED-9E55-4297-B058-DA5CBFAAACD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75424ED-9E55-4297-B058-DA5CBFAAACD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C75424ED-9E55-4297-B058-DA5CBFAAACD6}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75424ED-9E55-4297-B058-DA5CBFAAACD6}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{5FD5D8BE-E839-407B-9401-656E9CDD275C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FD5D8BE-E839-407B-9401-656E9CDD275C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FD5D8BE-E839-407B-9401-656E9CDD275C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FD5D8BE-E839-407B-9401-656E9CDD275C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
