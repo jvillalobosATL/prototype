@@ -1,0 +1,240 @@
+﻿@model test_mvc_website.App_Data.CollegeProfessional
+
+
+<style>
+    .sharing-buttons {
+        font-size: 0.7em;
+        list-style: none;
+        text-decoration: none;
+        text-align: right;
+    }
+
+        .sharing-buttons li {
+            display: inline;
+        }
+
+        .sharing-buttons a {
+            /*border: 1px solid;*/
+            /*padding: 0.2em 0.5em;*/
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            margin: 0 5em;
+        }
+
+            .sharing-buttons a:hover {
+                color: #eee;
+                text-decoration: none;
+            }
+
+    .fa {
+        padding: 0.5em;
+    }
+
+
+
+
+    .facebook {
+        background: #3B5998;
+    }
+
+    .twitter.icon {
+        background: #00ACED;
+        height: 4em;
+        line-height: 4em;
+        width: 4em;
+        margin: 0 0.3em;
+    }
+
+    .google-plus.icon {
+        background: #D14836;
+        height: 4em;
+        line-height: 4em;
+        width: 4em;
+        margin: 0 0.3em;
+    }
+
+    .facebook.icon {
+        background: #3B5998;
+        height: 4em;
+        line-height: 4em;
+        width: 4em;
+        margin: 0 0.3em;
+    }
+
+    .linkedin.icon {
+        background: #0077b5;
+        height: 4em;
+        line-height: 4em;
+        width: 4em;
+        margin: 0 0.3em;
+    }
+</style>
+<body>
+    <div id="page-wrapper">
+        <!-- Header -->
+        @Html.Partial("_defaultHeader")
+        @{
+            ViewBag.Title = "How it works";
+        }
+
+
+        <section id="main" class="container">
+            <header>
+                <h2>How it works</h2>
+                <p>Our managed marketplace is solving the “too many high ROI analytics projects and not enough in-house resources” problem while setting top-tier university talent up for success</p>
+            </header>
+
+
+
+
+
+            <section class="box special">
+
+
+                <div>
+                    <ul class="sharing-buttons ">
+                        <li>
+
+
+                            <a class="icon major fa-twitter twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.thelaunchlink.com&text=Check%20this%20site" target="_blank">
+
+
+                            </a>
+                            <a class="icon major fa-linkedin linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.thelaunchlink.com/&title=check%20the%20launch%20link&summary=some%20summary%20if%20you%20want&source=launchlink.com" target="_blank">
+
+                            </a>
+                            <a class="icon major fa-facebook facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+
+                            </a>
+                            <a class="icon major fa-google-plus google-plus" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+                            </a>
+
+
+
+                        </li>
+                    </ul>
+
+                </div>
+                <!--socialmedia-->
+                @*<div>
+                        <ul class="sharing-buttons ">
+                            <li>
+                                <a class="facebook icon fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+                                    Facebook
+                                </a>
+
+                                <a class="twitter icon fa-twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.thelaunchlink.com&text=Check%20this%20site" target="_blank">
+
+                                    Tweet
+                                </a>
+
+                                <a class="google-plus icon fa-google-plus" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+                                    Google+
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>*@
+
+
+
+
+                <div class="12u">
+                    <section>
+                        <p>
+                            <span class="image left">
+                                <span class="icon major fa-rocket accent2"></span>
+                            </span>
+                            <h3 class="align-left">1. Post a Project – Tell us your goals</h3>
+
+                        <p class="align-left">
+                            Tell us a little bit about your project goals, tools and required experience and then determine if you would like to launch a project or launch a competition!
+                        </p>
+
+
+
+
+                        <p>
+                            <span class="image left">
+                                <span class="icon major fa-search accent1"></span>
+                            </span>
+                            <h3 class="align-left">2. Bidding Process – Linking with the best talent </h3>
+
+                        <p class="align-left">
+                            After the project has been submitted it will join the marketplace and solicit bids from university talent. Once all bids have been received the business professional will make their selection based on the best bid for them.
+                        </p>
+
+                        <p>
+                            <span class="image left">
+                                <span class="icon major fa-area-chart accent3"></span>
+                            </span>
+                            <h3 class="align-left">3. Project Cockpit – Project management control center</h3>
+                        <p class="align-left">
+                            Our proprietary work environment that  provides you all of the tools needed for a speedy launch and successful completion of the project.
+                            Our pre project package takes care of the legal stuff like NDA’s and SOW’s while our work environment allows you to collaborate, set milestones and checkpoints and share findings.
+                        </p>
+
+                        <p>
+                            <span class="image left">
+                                <span class="icon major fa-dollar accent5"></span>
+                            </span>
+                            <h3 class="align-left">4. Project Completion – Pay when you’re satisfied </h3>
+                        <p class="align-left">
+                            The launch link handles all payments and will pay the consultants once the work is completed less our service fee. At time of project launch ,once the business selects the bid, we’ll take payment via credit card or ach and hold it in escrow until the project is complete
+                        </p>
+
+
+                        <p>
+                            <span class="image left">
+                                <span class="icon major fa-check accent4"></span>
+                            </span>
+                            <h3 class="align-left">5. Feedback – Rate the consultants</h3>
+                        <p class="align-left">
+                            Once the project is complete the business professional will have the opportunity to provide feedback about the consultant. This rating will be a part of their profile and will show future potential businesses how good the consultants are. It will help them get future bids and even assist in employment after graduation.
+                        </p>
+
+
+                        <!--socialmedia-->
+                        <div>
+                            <ul class="sharing-buttons ">
+                                <li>
+
+
+                                    <a class="icon major fa-twitter twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.thelaunchlink.com&text=Check%20this%20site" target="_blank">
+
+
+                                    </a>
+                                    <a class="icon major fa-linkedin linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.thelaunchlink.com/&title=check%20the%20launch%20link&summary=some%20summary%20if%20you%20want&source=launchlink.com" target="_blank">
+
+                                    </a>
+                                    <a class="icon major fa-facebook facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+
+                                    </a>
+                                    <a class="icon major fa-google-plus google-plus" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+                                    </a>
+
+
+
+                                </li>
+                            </ul>
+
+                        </div>
+                        <h3>Your feedback is much appreciated!</h3>
+                        <a href="https://www.surveymonkey.com/s/LFGH6MB" target="_blank">help us with this survey</a>
+                    </section>
+                </div>
+            </section>
+        </section>
+        <!--footer-->
+        @Html.Partial("_footer")
+    </div>
+
+
+</body>

@@ -61,7 +61,7 @@ namespace test_mvc_website.App_Data
         public string Description { get; set; } // description
          [Display(Name = "Area of Study")]
         public string AreaOfStudy { get; set; } // areaOfStudy
-        [Display(Name = "Years worked in analytics/business intelligence field")]
+        [Display(Name = "Years worked in analytics/bi")]
          public eYearsOfExperience? YearsWorked { get; set; } // yearsWorked
         [Display(Name = "How did you hear about us")]
         public string HowDidYouHearAboutUs { get; set; } // howDidYouHearAboutUs

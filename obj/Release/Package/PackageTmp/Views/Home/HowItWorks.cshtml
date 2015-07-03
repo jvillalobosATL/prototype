@@ -1,0 +1,377 @@
+﻿
+
+<style>
+
+
+    .sharing-buttons {
+        font-size:0.7em;
+        list-style: none;
+        text-decoration: none;
+        text-align: right;
+    }
+
+        .sharing-buttons li {
+            display: inline;
+        }
+
+        .sharing-buttons  a {
+            /*border: 1px solid;*/
+            /*padding: 0.2em 0.5em;*/
+        text-align:center;
+            color: #fff;
+            text-decoration: none;
+            margin:0 5em;
+        }
+
+            .sharing-buttons a:hover {
+                color: #eee;
+                text-decoration: none;
+            }
+
+    .fa {
+        padding: 0.5em;
+    }
+
+
+
+
+    .facebook {
+        background: #3B5998;
+    }
+
+    .twitter.icon {
+          background: #00ACED;
+          height:4em;
+          line-height:4em;
+          width:4em;
+          margin:0 0.3em;
+
+    }
+        .google-plus.icon {
+          background: #D14836;
+          height:4em;
+          line-height:4em;
+          width:4em;
+          margin:0 0.3em;
+
+    }
+                .facebook.icon {
+          background: #3B5998;
+          height:4em;
+          line-height:4em;
+          width:4em;
+          margin:0 0.3em;
+    }
+          .linkedin.icon {
+          background: #0077b5;
+          height:4em;
+          line-height:4em;
+          width:4em;
+          margin:0 0.3em;
+    }
+</style>
+<body>
+    <div id="page-wrapper">
+        <!-- Header -->
+        @Html.Partial("_defaultHeader")
+        @{
+            ViewBag.Title = "How it works";
+        }
+
+
+        <section id="main" class="container">
+            <header>
+                <h2>How it works</h2>
+                <p>Our managed marketplace is solving the “too many high ROI analytics projects and not enough in-house resources” problem while setting top-tier university talent up for success</p>
+            </header>
+
+
+  
+
+
+                    <section class="box special">
+  
+
+                        <div>
+                            <ul class="sharing-buttons ">
+                                <li>
+ 
+
+                                    <a class="icon major fa-twitter twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.thelaunchlink.com&text=Check%20this%20site" target="_blank">
+
+                                    
+                                    </a>
+                                    <a class="icon major fa-linkedin linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.thelaunchlink.com/&title=check%20the%20launch%20link&summary=some%20summary%20if%20you%20want&source=launchlink.com" target="_blank">
+
+                                    </a>
+                                    <a class="icon major fa-facebook facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+
+                                    </a>
+                                    <a class="icon major fa-google-plus google-plus" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+                                    </a>
+
+
+                                    
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!--socialmedia-->
+                        @*<div>
+                            <ul class="sharing-buttons ">
+                                <li>
+                                    <a class="facebook icon fa-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+                                       
+                                        Facebook
+                                    </a>
+
+                                    <a class="twitter icon fa-twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.thelaunchlink.com&text=Check%20this%20site" target="_blank">
+                                  
+                                        Tweet
+                                    </a>
+
+                                    <a class="google-plus icon fa-google-plus" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+                                      
+                                        Google+
+                                    </a>
+                                </li>
+                            </ul>
+                          
+                        </div>*@
+                        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+                        <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+                        <script>
+                            $(document).ready(function () {
+
+                                $("#modal1").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    }
+                                    , title: "Launch a Project"
+                                    ,dialogClass: "no-close"
+
+                                });
+
+                                $("#modal2").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title: "Launch a Competition"
+                                     , dialogClass: "no-close"
+                                });
+
+                                $("#modal3").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title: "Service Fee"
+                                     , dialogClass: "no-close"
+                                });
+
+                                $("#modal4").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title: "Cockpit"
+                                     , dialogClass: "no-close"
+                                });
+                                $("#modal5").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title: "Work Environment"
+                                     , dialogClass: "no-close"
+                                });
+                                $("#modal6").dialog({
+                                    resizable: false,
+                                    autoOpen: false,
+                                    width: 440,
+                                    modal: false,
+                                    buttons: {
+                                        "Ok": function () {
+                                            $(this).dialog("close");
+                                        }
+                                    },
+                                    title: "Secure Working Area"
+                                     , dialogClass: "no-close"
+                                });
+
+
+                                $("#lnk1").click(function () {
+                                    $("#modal1").dialog("open");
+                                });
+                                $("#lnk2").click(function () { $("#modal2").dialog("open"); });
+                                $("#lnk3").click(function () { $("#modal3").dialog("open"); });
+                                $("#lnk4").click(function () { $("#modal4").dialog("open"); });
+                                $("#lnk5").click(function () { $("#modal5").dialog("open"); });
+                                $("#lnk6").click(function () { $("#modal6").dialog("open"); });
+                            });
+                        </script>
+                        <div id="modal1">Consists of multiple bids and you will select the best bid and collaborate with that person to complete the project</div>
+                        <div id="modal2">Consist of multiple people participating in the competition (many individual projects) and the business will award a prize to the top few performers.</div>
+                        <div id="modal3">Here’s an example of how the service fee works:
+                            <ul>
+                                <li>Business selects best bid of $10,000</li>
+                                <li>  The launch link takes payment of $11,500</li>
+                                <li>Once the project is complete the launch link sends payment of 9,500 to consultant</li>
+                                <li>The launch Link’s fee to business is 15%</li>
+                                <li>The launch links fee to consultant is 5%</li>
+                            </ul>
+                        </div>
+                        <div id="modal4">Project plan – One of our PM professionals will work with you to develop a detailed project plan, milestones, checkpoints and success criteria. Additionally, we’ll take care of all of the legal stuff like NDA’s and confidentiality agreements</div>
+                      
+
+                        <div id="modal5">Once the project is started the work environment is where you will collaborate with the consultant </div>
+
+                        <div id="modal6">This is where the work takes place. It’s a secure environment where data is maintained and analysis is completed. </div>
+
+                              <div class="12u">
+                                <section>
+                                    <p>
+                                        <span class="image left">
+                                            <span class="icon major fa-rocket accent2"></span>
+                                        </span>
+                                        <h3 class="align-left">1. Post a Project – Tell us your goals</h3>
+
+                                    <p class="align-left">
+                                        Tell us a little bit about your project goals, tools and required experience and then determine if you would like to <a id="lnk1">launch a project</a>  or <a id="lnk2">launch a competition!</a>
+                                    </p>
+                                    <p>
+                                        <span class="image left">
+                                            <span class="icon major fa-search accent1"></span>
+                                        </span>
+                                        <h3 class="align-left">2. Bidding Process – Linking with the best talent </h3>
+
+                                    <p class="align-left">
+                                        After the project has been submitted it will join the marketplace and solicit bids from university talent. Once all bids have been received the business professional will make their selection based on the best bid for them.
+                                    </p>
+
+                                    <p>
+                                        <span class="image left">
+                                            <span class="icon major fa-area-chart accent3"></span>
+                                        </span>
+                                        <h3 class="align-left">3. Project <a id="lnk4">Cockpit</a> – Project management control center</h3>
+                                    <p class="align-left">
+                                        Our proprietary work environment that  provides you all of the tools needed for a speedy launch and successful completion of the project.
+                                        Our pre project package takes care of the legal stuff like NDA’s and SOW’s while our work environment allows you to collaborate, set milestones and checkpoints and share findings.
+                                    </p>
+
+                                    <p>
+                                        <span class="image left">
+                                            <span class="icon major fa-dollar accent5"></span>
+                                        </span>
+                                        <h3 class="align-left">4. Project Completion – Pay when you’re satisfied </h3>
+                                    <p class="align-left">
+                                        The launch link handles all payments and will pay the consultants once the work is completed less our <a id="lnk3">service fee</a> At time of project launch ,once the business selects the bid, we’ll take payment via credit card or ach and hold it in escrow until the project is complete
+                                    </p>
+
+
+                                    <p>
+                                        <span class="image left">
+                                            <span class="icon major fa-check accent4"></span>
+                                        </span>
+                                        <h3 class="align-left">5. Feedback – Rate the consultants</h3>
+                                    <p class="align-left">
+                                        Once the project is complete the business professional will have the opportunity to provide feedback about the consultant. This rating will be a part of their profile and will show future potential businesses how good the consultants are. It will help them get future bids and even assist in employment after graduation.
+                                    </p>
+
+
+                                    <!--socialmedia-->
+                                    <div>
+                                        <ul class="sharing-buttons ">
+                                            <li>
+
+
+                                                <a class="icon major fa-twitter twitter" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.thelaunchlink.com&text=Check%20this%20site" target="_blank">
+
+
+                                                </a>
+                                                <a class="icon major fa-linkedin linkedin" href="http://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fwww.thelaunchlink.com/&title=check%20the%20launch%20link&summary=some%20summary%20if%20you%20want&source=launchlink.com" target="_blank">
+
+                                                </a>
+                                                <a class="icon major fa-facebook facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+
+                                                </a>
+                                                <a class="icon major fa-google-plus google-plus" href="https://plus.google.com/share?url=https%3A%2F%2Fwww.thelaunchlink.com" target="_blank">
+
+                                                </a>
+
+
+
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+
+
+
+     </section>
+                            </div>
+</section>
+
+            <section class="box special">
+
+                <h3>Your feedback is much appreciated!</h3>
+                <p>
+                <span class="image left">
+                    <span class="icon major fa-comments accent4"></span>
+                </span>
+                <p class="align-left">
+                    We are working hard to have all this features available to you soon.
+                    Please take<b>
+                        @if (ViewBag.UserType == "talent")
+                        {
+
+                            <a href="https://www.surveymonkey.com/s/GVLMCPQ" target="_blank">this survey</a>
+                        }
+                        else if (ViewBag.UserType == "business")
+                        {
+
+                            <a href="https://www.surveymonkey.com/s/LFGH6MB" target="_blank">this survey</a>
+                        }
+                    </b>
+                    to help us to improve this site.
+                    </p>
+</section>
+        </section>
+        <!--footer-->
+        @Html.Partial("_footer")
+    </div>
+
+
+</body>

@@ -1,0 +1,109 @@
+﻿<body>
+    <div id="page-wrapper">
+        <!-- Header -->
+        @Html.Partial("_defaultHeader")
+        @model test_mvc_website.App_Data.CollegeProfessional
+
+        @{
+            ViewBag.Title = "Details";
+        }
+
+        <h2>Details</h2>
+
+        <div>
+            <h4>CollegeProfessional</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AreaOfStudy)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AreaOfStudy)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.YearsWorked)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.YearsWorked)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.HowDidYouHearAboutUs)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.HowDidYouHearAboutUs)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AllowFeedbackEmail)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AllowFeedbackEmail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AllowSurvey)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AllowSurvey)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AllowCall)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AllowCall)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.PhoneNumber)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PhoneNumber)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+        <!--footer-->
+        @Html.Partial("_footer")
+    </div>
+
+
+</body>
